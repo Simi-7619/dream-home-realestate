@@ -1,21 +1,48 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from 'react-hot-toast';
+import { AuthContext } from "../Providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
+    const navigate = useNavigate()
     const handelRegister = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
-        const name = form.get('name');
-        const photo = form.get('photo');
+        // const name = form.get('name');
+        // const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password')
-        console.log(name, photo, email, password)
+
+        // password regex
+        if (password.length < 6) {
+            return toast.error('Password Must be 6 charecter or longer')
+        }
+        else if (!/[A-Z]/.test(password)) {
+            return toast.error('Your password Should Have at least one UpperCase letter')
+        }
+        else if (!/[a-z]/.test(password)) {
+            return toast.error('Your password Should Have at least one LowerCase letter')
+        }
+        
+        createUser(email, password)
+            .then(result =>{
+                console.log(result.user)
+                toast.success('You have registered Successfully')
+                e.target.reset()
+                navigate('/firstLogin')
+            })
+            .catch(error=>console.error(error.message))
+
+        // console.log(name, photo, email, password)
     }
     return (
         <div className="my-12">
             <h2 className="text-3xl font-bold text-center">Register Now</h2>
-            <form className="card-body w-[90%] lg:w-1/2 mx-auto" onSubmit={handelRegister}>
+            <form className="card-body w-[90%] lg:w-[40%] mx-auto" onSubmit={handelRegister}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Name</span>
@@ -49,14 +76,14 @@ const Register = () => {
                     </div>
                 </div>
                 <div className="flex gap-2 items-center mt-2">
-                    <input type="checkbox" name="terms" id="terms" />
-                    <label htmlFor="terms">Except our <a className="text-blue-500">Tems and Conditions</a></label>
+                    <input type="checkbox" checked name="terms" id="terms" />
+                    <label htmlFor="terms">Except our <a className="text-logoGreen">Tems and Conditions</a></label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn bg-logoGreen text-white text-xl">Register</button>
+                    <button className="btn bg-logoGreen hover:bg-green-600 text-white text-xl">Register</button>
                 </div>
             </form>
-            <p className="text-center">Already have an account? <a href="/login" className="text-blue-500 underline">Login</a></p>
+            <p className="text-center">Already have an account? <a href="/login" className="text-logoGreen font-bold underline">Login</a></p>
         </div>
     );
 };

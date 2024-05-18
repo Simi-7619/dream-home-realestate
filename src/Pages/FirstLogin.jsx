@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
+const FirstLogin = () => {
     const [showPassword, setShowPassword] = useState(false)
 
-
-    const handelLogin = e => {
+    const handelFirstLogin = e=>{
         e.preventDefault()
     }
+
     return (
         <div className="my-12">
             <h2 className="text-3xl font-bold text-center">Login Now</h2>
-            <form className="card-body w-[90%] lg:w-[40%] mx-auto" onSubmit={handelLogin}>
+            <form className="card-body w-[90%] lg:w-[40%] mx-auto" onSubmit={handelFirstLogin}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -40,7 +40,7 @@ const Login = () => {
 
 
         </div >
-    );
+    )
 };
 
-export default Login;
+export default FirstLogin;
