@@ -7,9 +7,16 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext)
 
+    const handelSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     const navLinks = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/login'>Login</NavLink>
+        <NavLink to='/profile'>Your Profile</NavLink>
         <NavLink to='/updateprofile'>UpdateProfile</NavLink>
     </>
     return (
@@ -42,13 +49,13 @@ const Header = () => {
                                     </div>
                                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box md:w-52 -ml-24">
                                         <li><p className="rounded-md hover:bg-logoGreen px-3 py-2 hover:text-white text-base mb-3 md:mb-1 font-medium">{user?.displayName || 'No Name Found'}</p></li>
-                                        <li><a onClick={logOut} className="lg:hidden px-7 py-3 overflow-hidden group bg-logoGreen hover:bg-gradient-to-r hover:from-logoGreen hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                        <li><a onClick={handelSignOut} className="lg:hidden px-7 py-3 overflow-hidden group bg-logoGreen hover:bg-gradient-to-r hover:from-logoGreen hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                                             <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                                             <span className="relative">Log Out</span>
                                         </a></li>
                                     </ul>
                                 </div>
-                                <button onClick={logOut} className="hidden lg:block rounded px-7 py-3 overflow-hidden group bg-logoGreen relative hover:bg-gradient-to-r hover:from-logoGreen hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                                <button onClick={handelSignOut} className="hidden lg:block rounded px-7 py-3 overflow-hidden group bg-logoGreen relative hover:bg-gradient-to-r hover:from-logoGreen hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
                                     <span className="absolute right-0 w-8 h-32 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                                     <span className="relative">Log Out</span>
                                 </button>

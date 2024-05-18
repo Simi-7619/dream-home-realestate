@@ -4,6 +4,7 @@ import Property from "./Property";
 
 const Properties = () => {
     const properties = useLoaderData()
+    console.log(properties)
     return (
         <div className="my-12 xl:w-[1400px] xl:mx-auto mx-10">
             <div className="animate__animated animate__slideInDown">

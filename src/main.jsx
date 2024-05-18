@@ -14,8 +14,9 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import { Toaster } from 'react-hot-toast';
 import AuthProvider from './Providers/AuthProvider';
-import FirstLogin from './Pages/FirstLogin';
 import UpdateProfile from './Pages/UpdateProfile';
+import PrivateRoute from './Routes/PrivateRoute';
+import ProfileDetails from './Pages/ProfileDetails';
 
 
 const router = createBrowserRouter([
@@ -37,19 +38,20 @@ const router = createBrowserRouter([
         path:'/register',
         element:<Register/>
       },
-      // {
-      //   path:'/properties',
-      //   element:<Properties/>,
-      //   loader:()=>fetch('properties.json')
-      // },
       {
-        path:"/:id",
-        element:<PropertyDetails/>,
+        path:'/properties',
+        element:<Properties/>,
         loader:()=>fetch('properties.json')
       },
       {
-        path:'/firstLogin',
-        element:<FirstLogin/>
+        path:"/:id",
+        element:<PrivateRoute><PropertyDetails/></PrivateRoute>,
+        loader:()=>fetch('properties.json')
+      },
+      {
+        path:"/dashboard",
+        element:<PrivateRoute><ProfileDetails/></PrivateRoute>,
+        loader:()=>fetch('properties.json')
       },
       {
         path:'/updateprofile',

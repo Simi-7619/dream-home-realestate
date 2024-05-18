@@ -49,9 +49,11 @@ const Register = () => {
                 console.log(result.user)
 
                 e.target.reset()
-                navigate('/firstLogin')
+                navigate('/')
             })
-            .catch(error => console.error(error.message))
+            .catch(error => {
+                toast.error(error.message)
+            })
 
         // console.log(name, photo, email, password)
     }
