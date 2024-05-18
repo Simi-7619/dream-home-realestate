@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import { AuthContext } from "../Providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { Helmet } from "react-helmet";
@@ -13,6 +13,10 @@ const Register = () => {
     const { createUser } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location)
+
+
     const handelRegister = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -49,7 +53,7 @@ const Register = () => {
                 console.log(result.user)
 
                 e.target.reset()
-                navigate('/')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 toast.error(error.message)
