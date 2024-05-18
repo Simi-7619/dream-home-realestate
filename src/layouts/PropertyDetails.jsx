@@ -17,7 +17,7 @@ const PropertyDetails = () => {
             <div className="">
                 <div className="my-12 xl:w-[1400px] xl:mx-auto mx-10 space-y-3">
                     <h1 className="text-2xl font-medium ">{estate_title} (<small>At</small> {location})</h1>
-                    <div className="md:flex gap-8 py-4">
+                    <div className="flex flex-wrap gap-3 lg:gap-8 py-4">
                         <div className="flex gap-1 items-center">
                             <MdOutlineZoomInMap className="text-4xl text-logoGreen" />
                             <p className="text-base font-semibold">{area} sqf</p>
@@ -31,7 +31,7 @@ const PropertyDetails = () => {
                             <p className="text-base font-semibold">{bath} Baths</p>
                         </div>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex flex-wrap gap-3">
                         {
                             facilities.map(facility => <p key={id} className="bg-green-50 font-semibold px-5 border border-green-200 py-2 rounded-3xl text-logoGreen">{facility}</p>)
                         }
@@ -41,7 +41,7 @@ const PropertyDetails = () => {
                 <div className="">
                     <h2 className="text-2xl font-bold text-center text-white bg-logoGreen py-3">At a glance</h2>
                     <div className=" my-12 xl:w-[1400px] xl:mx-auto mx-10 ">
-                        <div className="space-y-3 flex gap-12 justify-center">
+                        <div className="space-y-3 flex  flex-wrap gap-4 lg:gap-8 lg:justify-center">
                             <div className="flex gap-4 items-center">
                                 <p><b>Area: </b></p>
                                 <p className="bg-green-50 font-semibold px-5 border border-green-200 py-2 rounded-3xl text-logoGreen">{area} Square fit</p>

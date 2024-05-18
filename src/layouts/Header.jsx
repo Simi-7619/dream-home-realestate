@@ -16,13 +16,21 @@ const Header = () => {
     const navLinks = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/login'>Login</NavLink>
-        <NavLink to='/profile'>Your Profile</NavLink>
-        <NavLink to='/updateprofile'>UpdateProfile</NavLink>
+        {
+            user && <>
+                <NavLink to='/dashboard'>Dashboard</NavLink>
+                <NavLink to='/updateprofile'>UpdateProfile</NavLink>
+            </>
+        }
+        <NavLink to='/contact'>Contact</NavLink>
+
     </>
     return (
-        <div className="w-full shadow-sm sticky relative z-10">
-            <div className="navbar xl:w-[1400px] xl:mx-auto lg:mx-10">
-                <div className="navbar-start">
+     
+       
+        <div className="w-full shadow-sm relative z-10">
+            <div className="navbar flex gap-10 justify-between lg:justify-center xl:justify-between lg:w-[80%] xl:mx-auto lg:mx-10">
+                <div className="">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -33,12 +41,12 @@ const Header = () => {
                     </div>
                     <a className="font-semibold text-2xl">Dream <span className="text-logoGreen">Home</span></a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 flex gap-6 text-lg">
+                <div className=" hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 flex gap-3 text-lg">
                         {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-4">
+                <div className=" flex gap-4">
                     {
                         user ?
                             <>
@@ -73,7 +81,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default Header;
