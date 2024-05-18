@@ -11,6 +11,7 @@ import Home from './Pages/Home';
 import Properties from './layouts/Properties';
 import PropertyDetails from './layouts/PropertyDetails';
 import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -22,12 +23,14 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home/>,
         loader:()=>fetch('properties.json')
-
-
       },
       {
         path:'/login',
         element:<Login/>
+      },
+      {
+        path:'/register',
+        element:<Register/>
       },
       {
         path:'/properties',

@@ -3,7 +3,6 @@ import PropertyBanner from "./PropertyBanner";
 import { MdOutlineZoomInMap } from "react-icons/md";
 import { LuBedDouble } from "react-icons/lu";
 import { PiBathtubBold } from "react-icons/pi";
-import { IoMdCall } from "react-icons/io";
 
 const PropertyDetails = () => {
     const properties = useLoaderData()
