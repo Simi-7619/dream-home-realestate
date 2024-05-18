@@ -1,3 +1,4 @@
+import 'animate.css';
 
 const About = () => {
     return (
@@ -6,7 +7,7 @@ const About = () => {
                 <div className="flex items-center justify-center p-6">
                     <img src="https://i.ibb.co/6gb5KRr/download-33.png" alt="" className="w-full object-contain " />
                 </div>
-                <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left space-y-4">
+                <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left space-y-4 animate__animated animate__slideInRight">
                     <p className="text-logoGreen font-bold text-base">Our Story: Core Value</p>
                     <h1 className=" text-4xl font-semibold md:text-5xl ">Efficiency.Control.<br />
                         <span className="text-logoGreen">Transparency</span>

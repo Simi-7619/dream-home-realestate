@@ -1,4 +1,3 @@
-import { FaFileCircleQuestion } from "react-icons/fa6";
 
 const Faq = () => {
     return (
@@ -28,7 +27,7 @@ const Faq = () => {
                     <div className="space-y-3 border p-3 border-green-200">
                         <h3 className="font-semibold  text-xl">What are the common costs associated with buying a single-family home?</h3>
                         <p className="mt-1 dark:text-gray-600">Common costs include the down payment (typically 3% to 20% of the purchase price), closing costs
-                         (2% to 5% of the loan amount), home inspection fees (around $300 to $500), property taxes based on the home's assessed value, homeowners
+                         (2% to 5% of the loan amount), home inspection fees (around $300 to $500), property taxes based on the homes assessed value, homeowners
                           insurance required by lenders, and moving costs for services and supplies.</p>
                     </div>
                 </div>

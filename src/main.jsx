@@ -9,6 +9,7 @@ import Root from './layouts/Root';
 import ErrorPage from './Pages/ErrorPage';
 import Home from './Pages/Home';
 import Properties from './layouts/Properties';
+import PropertyDetails from './layouts/PropertyDetails';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +22,18 @@ const router = createBrowserRouter([
         element:<Home/>,
         loader:()=>fetch('properties.json')
 
+
       },
       {
         path:'/properties',
         element:<Properties/>,
         loader:()=>fetch('properties.json')
+      },
+      {
+        path:"/:id",
+        element:<PropertyDetails/>,
+        loader:()=>fetch('properties.json')
+
       }
     ]
   },
