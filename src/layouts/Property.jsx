@@ -18,7 +18,7 @@ const Property = ({ property }) => {
                 <img src={image} alt="Property-Image" className="rounded-t-2xl" />
                 <h3 className="text-xl font-semibold"><b>{estate_title}</b> at {location}</h3>
                 <p>{segment_name}</p>
-                <div className="md:flex gap-8 border-y py-4 border-gray-200">
+                <div className="flex flex-wrap gap-8 border-y py-4 border-gray-200">
                     <div className="flex gap-1 items-center">
                         <MdOutlineZoomInMap className="text-2XL text-logoGreen" />
                         <p className="text-base font-semibold">{area} sqf</p>
