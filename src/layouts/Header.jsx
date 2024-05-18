@@ -8,7 +8,7 @@ const Header = () => {
         <NavLink to='/updateprofile'>UpdateProfile</NavLink>
     </>
     return (
-            <div className="navbar sticky shadow-xl xl:w-[1400px] xl:mx-auto mx-10">
+            <div className="navbar xl:w-[1400px] xl:mx-auto mx-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
