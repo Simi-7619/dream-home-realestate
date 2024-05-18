@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Property = ({ property }) => {
-    const { image, estate_title, price, location, facilities, bath, bed, area, status, id } = property
+    const { image, estate_title, price, location, facilities, bath, bed, area, status, id, segment_name } = property
     AOS.init();
 
     return (
@@ -17,6 +17,7 @@ const Property = ({ property }) => {
             <div className="flex-grow space-y-5 ">
                 <img src={image} alt="Property-Image" className="rounded-t-2xl" />
                 <h3 className="text-xl font-semibold"><b>{estate_title}</b> at {location}</h3>
+                <p>{segment_name}</p>
                 <div className="md:flex gap-8 border-y py-4 border-gray-200">
                     <div className="flex gap-1 items-center">
                         <MdOutlineZoomInMap className="text-2XL text-logoGreen" />
@@ -33,7 +34,7 @@ const Property = ({ property }) => {
                 </div>
                 <div className="flex justify-between">
                     <p><b>Price:</b> ${price}</p>
-                    <p><b>Status:</b> ${status}</p>
+                    <p><b>Status:</b> {status}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                     {

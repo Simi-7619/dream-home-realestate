@@ -1,0 +1,23 @@
+ul a{
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px;
+}
+ul a:hover{
+    background-color:whitesmoke;
+    border: 1px solid rgb(215, 213, 213)
+}
+ul a.active{
+    color: #3DBC67;
+    font-weight: 500;
+    border: 1px solid #3DBC67;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: transparent;
+}
+
+ul a.active:hover{
+    background-color:#3DBC67;
+    color: white;
+}
