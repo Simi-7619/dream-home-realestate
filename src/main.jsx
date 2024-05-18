@@ -14,6 +14,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import { Toaster } from 'react-hot-toast';
 import AuthProvider from './Providers/AuthProvider';
+import FirstLogin from './Pages/FirstLogin';
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,10 @@ const router = createBrowserRouter([
         path:"/:id",
         element:<PropertyDetails/>,
         loader:()=>fetch('properties.json')
-
+      },
+      {
+        path:'/firstLogin',
+        element:<FirstLogin/>
       }
     ]
   },

@@ -3,17 +3,20 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from 'react-hot-toast';
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../firebase/firebase.config";
 
 
 const Register = () => {
+    const auth = getAuth(app)
     const {createUser} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
     const handelRegister = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
-        // const name = form.get('name');
-        // const photo = form.get('photo');
+        const name = form.get('name');
+        const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password')
 
@@ -30,8 +33,20 @@ const Register = () => {
         
         createUser(email, password)
             .then(result =>{
-                console.log(result.user)
+               
                 toast.success('You have registered Successfully')
+                
+                 // update user's profile
+                 updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: photo,
+                    password: password
+                })
+                .then()
+                .catch(error => console.log(error.message, 'update error'))
+
+                console.log(result.user)
+
                 e.target.reset()
                 navigate('/firstLogin')
             })
