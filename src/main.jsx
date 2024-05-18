@@ -15,6 +15,7 @@ import Register from './Pages/Register';
 import { Toaster } from 'react-hot-toast';
 import AuthProvider from './Providers/AuthProvider';
 import FirstLogin from './Pages/FirstLogin';
+import UpdateProfile from './Pages/UpdateProfile';
 
 
 const router = createBrowserRouter([
@@ -36,11 +37,11 @@ const router = createBrowserRouter([
         path:'/register',
         element:<Register/>
       },
-      {
-        path:'/properties',
-        element:<Properties/>,
-        loader:()=>fetch('properties.json')
-      },
+      // {
+      //   path:'/properties',
+      //   element:<Properties/>,
+      //   loader:()=>fetch('properties.json')
+      // },
       {
         path:"/:id",
         element:<PropertyDetails/>,
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path:'/firstLogin',
         element:<FirstLogin/>
+      },
+      {
+        path:'/updateprofile',
+        element:<UpdateProfile/>
       }
     ]
   },

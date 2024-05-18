@@ -12,38 +12,44 @@ import Slider5 from '../Sliders/Slider5';
 import About from '../layouts/About';
 import Properties from '../layouts/Properties';
 import Faq from '../layouts/Faq';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
     return (
         <>
-        {/* hero section with swiper slider */}
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-            spaceBetween={0}
-            slidesPerView={1}
-            navigation
-            autoplay={{delay: 4000}}
-            pagination={{ clickable: true, loop: true }}
-            // scrollbar={{ draggable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-        >
-            <SwiperSlide><Slider1/></SwiperSlide>
-            <SwiperSlide><Slider2/></SwiperSlide>
-            <SwiperSlide><Slider3/></SwiperSlide>
-            <SwiperSlide><Slider4/></SwiperSlide>
-            <SwiperSlide><Slider5/></SwiperSlide>
-        </Swiper>
+            <Helmet>
+                <title>Dream Home | Home</title>
+            </Helmet>
+            {/* hero section with swiper slider */}
+            <div className='z-12 relative'>
+                <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    navigation
+                    autoplay={{ delay: 4000 }}
+                    pagination={{ clickable: true, loop: true }}
+                    // scrollbar={{ draggable: true }}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    onSlideChange={() => console.log('slide change')}
+                >
+                    <SwiperSlide><Slider1 /></SwiperSlide>
+                    <SwiperSlide><Slider2 /></SwiperSlide>
+                    <SwiperSlide><Slider3 /></SwiperSlide>
+                    <SwiperSlide><Slider4 /></SwiperSlide>
+                    <SwiperSlide><Slider5 /></SwiperSlide>
+                </Swiper>
+            </div>
 
-        {/* about section as extra section */}
-        <About/>
+            {/* about section as extra section */}
+            <About />
 
-        {/* featured Properties */}
-        <Properties/>
+            {/* featured Properties */}
+            <Properties />
 
-        {/* faq as extra section */}
-        <Faq/>
+            {/* faq as extra section */}
+            <Faq />
         </>
     );
 };

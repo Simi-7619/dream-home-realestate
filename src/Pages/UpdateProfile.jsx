@@ -1,9 +1,14 @@
-
+import { Helmet } from "react-helmet";
 const UpdateProfile = () => {
     return (
-        <div>
-           
-        </div>
+        <>
+            <Helmet>
+                <title>Dream Home | Profile Update</title>
+            </Helmet>
+            <div>
+
+            </div>
+        </>
     );
 };
 
