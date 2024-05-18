@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
@@ -10,6 +10,8 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
     const { signInUser } = useContext(AuthContext)
+    const location = useLocation()
+    console.log(location)
 
 
     const handelLogin = e => {
