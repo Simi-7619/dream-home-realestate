@@ -7,7 +7,7 @@ const About = () => {
                     <img src="https://i.ibb.co/6gb5KRr/download-33.png" alt="" className="w-full object-contain " />
                 </div>
                 <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left space-y-4">
-                    <p className="text-logoGreen font-bold text-sm">Our Story: Core Value</p>
+                    <p className="text-logoGreen font-bold text-base">Our Story: Core Value</p>
                     <h1 className=" text-4xl font-semibold md:text-5xl ">Efficiency.Control.<br />
                         <span className="text-logoGreen">Transparency</span>
                     </h1>

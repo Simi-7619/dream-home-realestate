@@ -11,6 +11,7 @@ import Slider4 from '../Sliders/Slider4';
 import Slider5 from '../Sliders/Slider5';
 import About from '../layouts/About';
 import Properties from '../layouts/Properties';
+import Faq from '../layouts/Faq';
 
 
 const Home = () => {
@@ -40,6 +41,9 @@ const Home = () => {
 
         {/* featured Properties */}
         <Properties/>
+
+        {/* faq as extra section */}
+        <Faq/>
         </>
     );
 };
