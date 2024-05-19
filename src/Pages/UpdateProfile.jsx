@@ -1,18 +1,45 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../Providers/AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../firebase/firebase.config";
+import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom";
+
 
 
 const UpdateProfile = () => {
     const {user} = useContext(AuthContext)
+    const auth = getAuth(app)
+    const navigate = useNavigate()
+
+
+    //  updte profile
+    const handelUpdate = e =>{
+        e.preventDefault();
+        const name = e.target.name.value
+        const email = e.target.email.value
+        const photo = e.target.photo.value
+
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            email: email,
+            photoURL: photo
+        })
+            .then(()=> {
+                toast.success('Profile Updated Successfully')
+                navigate('/')
+
+             } )
+    }
     return (
         <>
             <Helmet>
                 <title>Dream Home | Profile Update</title>
             </Helmet>
             <div className="my-12">
-                <h2 className="text-3xl font-bold text-center">Register Now</h2>
-                <form className="card-body w-[90%] lg:w-[40%] mx-auto">
+                <h2 className="text-3xl font-bold text-center">Update Your Profile Info</h2>
+                <form className="card-body w-[90%] lg:w-[40%] mx-auto" onSubmit={handelUpdate}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>

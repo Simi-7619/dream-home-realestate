@@ -52,7 +52,7 @@ const Header = () => {
                             <>
                                 <div className="dropdown dropdown-hover">
                                     <div tabIndex={0} role="button" className="m-1">
-                                        <img alt="profile Photo" src={user?.photoURL} className="w-[50px] rounded-full border border-logoGreen" />
+                                        <img alt="profile Photo" src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/XkRxRk6/user.png'} className="w-[50px] rounded-full border border-logoGreen" />
 
                                     </div>
                                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box md:w-52 -ml-24">

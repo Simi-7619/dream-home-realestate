@@ -13,17 +13,17 @@ import About from '../layouts/About';
 import Properties from '../layouts/Properties';
 import Faq from '../layouts/Faq';
 import { Helmet } from 'react-helmet';
-import { useContext } from 'react';
-import { AuthContext } from '../Providers/AuthProvider';
+// import { useContext } from 'react';
+// import { AuthContext } from '../Providers/AuthProvider';
 
 
 const Home = () => {
-    const {loader} = useContext(AuthContext)
+    // const {loader} = useContext(AuthContext)
 
-    if(loader){
-        return <span className="loading loading-spinner text-accent"></span>
+    // if(loader){
+    //     return <span className="loading loading-spinner text-accent"></span>
 
-    }
+    // }
     return (
         <>
             <Helmet>
